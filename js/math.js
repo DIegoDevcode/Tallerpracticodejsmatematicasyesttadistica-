@@ -33,6 +33,16 @@ return{
 };
 }
 
+
+function calcularAlturaTriangulo(lado1,base){
+  if(lado1 == base){
+    console.warn('Este no es un triangulo isoceles')
+  } else{
+    // h = raizcuadrada(lado1**2 - (b**2)/4)
+    return altura = Math.sqrt( (lado1 ** 2) - ( (base **2)) / 4);
+  }
+}
+
 console.log({
     ladoTriangulo1,
     ladoTriangulo2,
@@ -42,3 +52,50 @@ console.log({
     areaTriangulo
 })
 console.groupEnd('Triangulo') 
+// Formula para calcular la altura de un triangulo escaleno
+console.group('TrianguloEscaleno');
+function CalcularTrianguloEscaleno(a, b, c){
+  const Semiperimetro = (a + b + c) / 2;
+
+if(a == b && a == c){
+  console.warn('Este no es un triangulo escaleno.')
+} else{
+  H = ((2 /a) * (Math.sqrt(Semiperimetro * (Semiperimetro - a) *(Semiperimetro -b)* (Semiperimetro - c))));
+  console.log('La altura "H" = ' + H);
+}
+}
+console.groupEnd('TrianguloEscaleno');
+
+
+
+// Aqui empieza las formulas para calcular las formulas de un circulo
+console.group('circle') 
+
+const radioCirculo = 3;
+const diametroCirculo = radioCirculo * 2;
+const PI = 3.1415;
+
+const circunferencia = diametroCirculo * PI;
+const areaCirculo = (radioCirculo ** 2) * PI;
+
+console.log({
+  radioCirculo,
+  diametroCirculo,
+  PI,
+  circunferencia,
+  areaCirculo,
+})
+
+function calculacirculo(radioCirculo){
+  const diametro = radioCirculo * 2;
+  const radioAlcuadrado = Math.pow(radioCirculo, 2);   
+  
+  
+  return{
+    circunferencia: (radioCirculo * 2) * Math.PI,
+    area: radioAlcuadrado * Math.PI.toFixed(18),
+  }
+}
+
+
+console.groupEnd('circle') 
